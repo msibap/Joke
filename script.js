@@ -3,39 +3,36 @@
 const joke = document.querySelector(".joke");
 const btn = document.querySelector(".btn");
 
-getJoke();
+// First Page Load Joke
+generateJoke();
 
-async function getJoke() {
-  const response = await fetch("http://api.codebazan.ir/jok/khatere", {
-    cache: "no-cache",
-  });
-  // const response = await fetch("http://api.codebazan.ir/jok/", {
-  //   cache: "no-cache",
-  // });
-  const data = await response.text();
-  joke.innerHTML = data;
+async function generateJoke() {
+  // Grabs joke from the Header of website
+  const config = {
+    headers: {
+      accept: "application/json",
+    },
+  };
+
+  // Fetches a Response from website
+  const res = await fetch("https://icanhazdadjoke.com", config);
+  const data = await res.json();
+
+  joke.textContent = data.joke;
 }
 
-btn.addEventListener("click", function () {
-  getJoke();
-});
+// Button loads a new joke
+btn.addEventListener("click", generateJoke);
 
-// async function generateJoke() {
-//   const config = {
-//     headers: {
-//       accept: "application/json",
-//     },
-//   };
-
-//   const res = await fetch("http://api.codebazan.ir/jok/khatere", {
+// async function getJoke() {
+//   const response = await fetch("http://api.codebazan.ir/jok/khatere", {
 //     cache: "no-cache",
 //   });
-//   const res1 = await fetch("https://icanhazdadjoke.com", config);
-//   const data = await res.text();
-//   const data1 = await res1.text();
-
+//   const data = await response.text();
 //   console.log(data);
-//   console.log(data1);
+//   // joke.textContent = data;
 // }
 
-// generateJoke();
+// const response = await fetch("http://api.codebazan.ir/jok/khatere", {
+//   cache: "no-cache",
+// });
