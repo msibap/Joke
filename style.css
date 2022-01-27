@@ -52,18 +52,19 @@ body {
 }
 
 .joke {
-  font-family: "Yekan", sans-serif;
+  font-family: "kanit", sans-serif;
   font-size: 2.2rem;
   font-weight: 600;
+  border: none;
+  padding: 2rem;
+  margin: 0;
   grid-column: center-start / center-end;
   -ms-grid-row: 2;
   -ms-grid-row-span: 1;
   grid-row: 2 / 3;
   background-color: #f5f0f0;
   color: #212122;
-  padding: 2rem;
   text-align: center;
-  border: none;
 }
 
 .container {
