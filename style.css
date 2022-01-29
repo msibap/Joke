@@ -85,7 +85,7 @@ body {
 }
 
 .btn {
-  font-family: "Yekan", sans-serif;
+  font-family: inherit;
   font-size: 1.8rem;
   font-weight: 500;
   padding: 1rem 2rem;
